@@ -38,6 +38,7 @@ body {
 	left: 0;
 	top: 0;
 	height: 50px;
+	opacity: 0.9;
 
 }
 #main {
@@ -147,7 +148,7 @@ p{
   margin: 0 -0.2em;
   font-family: 'Wikicon-Regular';
   -webkit-font-smoothing: antialiased;
-  font-size: 3.2em;
+  font-size: 3em;
   font-style: normal;
   font-weight: normal;
   line-height: inherit;
