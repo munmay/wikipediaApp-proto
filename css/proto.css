@@ -1,0 +1,386 @@
+@viewport{
+    zoom: 1.0;
+    width: device-width;
+}
+
+
+@font-face {
+  font-family: 'Wikicon-Regular';
+  src: url('../fonts/Wikicon.eot'); 
+  src: url('../fonts/Wikicon.eot?#iefix') format('embedded-opentype'), 
+       url('../fonts/Wikicon.woff') format('woff'), 
+       url('../fonts/Wikicon.ttf')  format('truetype'), 
+       url('../fonts/Wikicon.svg#8088f7bbbdba5c9832b27edb3dfcdf09') format('svg'); 
+}
+
+
+body {
+    overflow: hidden;	
+}
+
+#bgphoto {
+	background-image: url('../images/SF.jpg');
+	background-repeat: no-repeat;
+	z-index: 10;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 300px;
+	height: 1000;
+
+}
+
+#topbar{
+	background-color: #fff;
+	z-index: 100;
+	width: 300px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 50px;
+
+}
+#main {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 500px;
+    width: 300px;
+    overflow: hidden;
+    background-image: url('../images/SF.jpg'); 
+	background-repeat: no-repeat;
+   
+}
+
+#child {
+    width: 100%;
+    overflow: auto;
+    height: 100%;
+    padding-right: 15px;
+    position: relative;
+}
+
+#logo, .wikicon{
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	top: -5;
+	left: 6;
+	/*background-image: url('../images/W_gray.svg');
+	background-repeat: no-repeat;
+	background-position: middle center;*/
+	/*width: 40px;
+	height: 40px;*/
+
+	}
+
+#searchbox{
+	width: 35px;
+	height: 35px;
+	position: absolute;
+	left: 55;
+	top: -10;
+	/*background-image: url('../images/magnifying_glass_gray.svg');
+	background-repeat: no-repeat;
+	background-position: middle center;*/
+}
+
+#edit{
+	width: 35px;
+	height: 35px;
+	position: absolute;
+	left: 55;
+	top: -50;
+	
+}
+
+#article {
+	background-color: #fff;
+	width: 300px;
+	z-index: 50;
+	position: absolute;
+	left: 0;
+	top: 250;
+}
+
+h1{
+	margin: 20px;
+	font: georgia;
+	font-size: 40px;
+	color: #333;
+}
+
+
+p{
+	margin: 20px;
+	font-family: sans-serif;
+	font-size: 16px;
+	color: #333;
+	line-height: 26px;
+}
+
+#left-drawer{
+	font-family: helvetica neue;
+	width: 200px;
+	background-color: #00AF89;
+	line-height: 2em;
+	font-size: 1em;
+	padding: 2.4em;
+	color: #fff;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+
+.icon{
+	font-size: 2em;
+	padding: 0.2em;
+	color: #fff;
+	position: absolute;
+}
+
+
+.wikicon {
+  display: inline-block;
+  margin: 0 -0.2em;
+  font-family: 'Wikicon-Regular';
+  -webkit-font-smoothing: antialiased;
+  font-size: 3.2em;
+  font-style: normal;
+  font-weight: normal;
+  line-height: inherit;
+  color: #777;
+  overflow: visible;
+  vertical-align: text-bottom;
+}
+
+/* WIKIPEDIA LOGO e000-021
+*/
+
+.wikicon-cap-w:before {
+  content: "\57";
+}
+.wikicon-lower-w:before {
+  content: "\77";
+}
+
+
+/* UI ELEMENTS e000-021
+*/
+
+.wikicon-magnifying-glass:before {
+  content: "\e000";
+}
+.wikicon-arrow-left:before {
+  content: "\e001";
+}
+.wikicon-tick:before {
+  content: "\e002";
+}
+.wikicon-x:before {
+  content: "\e003";
+}
+.wikicon-x-circle:before {
+  content: "\e004";
+}
+.wikicon-unstar:before {
+  content: "\e005";
+}
+.wikicon-star:before {
+  content: "\e006";
+}
+.wikicon-sun:before {
+  content: "\e007";
+}
+.wikicon-star-circle:before {
+  content: "\e008";
+}
+.wikicon-funnel:before {
+  content: "\e009";
+}
+.wikicon-eye:before {
+  content: "\e010";
+}
+.wikicon-eye-lid:before {
+  content: "\e011";
+}
+.wikicon-bookmark:before {
+  content: "\e012";
+}
+.wikicon-printer:before {
+  content: "\e013";
+}
+.wikicon-puzzle:before {
+  content: "\e014";
+}
+.wikicon-clock:before {
+  content: "\e015";
+}
+.wikicon-dice:before {
+  content: "\e016";
+}
+.wikicon-move:before {
+  content: "\e017";
+}
+.wikicon-gear:before {
+  content: "\e018";
+}
+.wikicon-ellipsis:before {
+  content: "\e019";
+}
+.wikicon-envelope:before {
+  content: "\e020";
+}
+.wikicon-pin:before {
+  content: "\e021";
+}
+
+
+/* STRIPES e040-043
+*/
+.wikicon-stripe-compact:before {
+  content: "\e040";
+}
+.wikicon-stripe-toc:before {
+  content: "\e041";
+}
+.wikicon-stripe-expanded:before {
+  content: "\e042";
+}
+
+
+/* UI MODERATION ELEMENTS e500-508 
+*/
+
+.wikicon-article:before {
+  content: "\e100";
+}
+.wikicon-article-check:before {
+  content: "\e101";
+}
+.wikicon-article-search:before {
+  content: "\e102";
+}
+
+.wikicon-trash:before {
+  content: "\e500";
+}
+.wikicon-trash-slash:before {
+  content: "\e501";
+}
+.wikicon-block:before {
+  content: "\e502";
+
+.wikicon-block-slash:before {
+  content: "\e503";
+}
+.wikicon-flag:before {
+  content: "\e504";
+}
+.wikicon-flag-slash:before {
+  content: "\e505";
+}
+.wikicon-play:before {
+  content: "\e506";
+}
+.wikicon-stop:before {
+  content: "\e507";
+}
+.wikicon-lock:before {
+  content: "\e508";
+}
+
+
+/* USER e600-602
+*/
+.wikicon-user-bust:before {
+  content: "\e600";
+}
+.wikicon-user-smile:before {
+  content: "\e601";
+}
+.wikicon-user-sleep:before {
+  content: "\e602";
+}
+
+
+/* TRANSLATION e700
+*/
+.wikicon-translate:before {
+  content: "\e700";
+}
+
+
+/* CONTRIBUTION e800-845
+*/
+.wikicon-pencil:before {
+  content: "\e800";
+}
+.wikicon-pencil-revert:before {
+  content: "\e801";
+}
+.wikicon-pencil-lock:before {
+  content: "\e802";
+}
+
+
+.wikicon-speech-bubble:before {
+  content: "\e810";
+}
+.wikicon-speech-bubbles:before {
+  content: "\e811";
+}
+.wikicon-speech-bubble-add:before {
+  content: "\e812";
+}
+.wikicon-speech-bubble-smile:before {
+  content: "\e813";
+}
+
+
+.wikicon-link:before {
+  content: "\e820";
+}
+
+
+.wikicon-quotes:before {
+  content: "\e830";
+}
+.wikicon-quotes-add:before {
+  content: "\e831";
+}
+
+
+.wikicon-image:before {
+  content: "\e840";
+}
+.wikicon-image-lock:before {
+  content: "\e841";
+}
+.wikicon-image-add:before {
+  content: "\e842";
+}
+.wikicon-image-main-placeholder:before {
+  content: "\e843";
+}
+.wikicon-folder:before {
+  content: "\e844";
+}
+.wikicon-folder-main-placeholder:before {
+  content: "\e845";
+}
+
+
+/* WIKI-X e900
+*/
+.wikicon-wikitrail:before {
+  content: "\e900";
+}
+
+
+
+
+
+
