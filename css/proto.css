@@ -68,13 +68,7 @@ body {
 	position: absolute;
 	top: -5;
 	left: 6;
-	/*background-image: url('../images/W_gray.svg');
-	background-repeat: no-repeat;
-	background-position: middle center;*/
-	/*width: 40px;
-	height: 40px;*/
-
-	}
+}
 
 #searchbox{
 	width: 35px;
@@ -82,9 +76,6 @@ body {
 	position: absolute;
 	left: 55;
 	top: -10;
-	/*background-image: url('../images/magnifying_glass_gray.svg');
-	background-repeat: no-repeat;
-	background-position: middle center;*/
 }
 
 #edit{
@@ -93,7 +84,6 @@ body {
 	position: absolute;
 	left: 55;
 	top: -50;
-	
 }
 
 #article {
