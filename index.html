@@ -27,7 +27,7 @@
 			// Animate on landing
 
 				$('#article').animate({top: '270'})
-			    $("#bgphoto").animate({zoom:'100%'});
+			    $("#bgphoto").animate({zoom:'90%'});
 
 			// Set the searchbox text to the value of the section headers as they scroll
 
@@ -71,6 +71,20 @@
 
 					$("#back, #context, #progressive-icon").show();
 			})
+
+			//Go back
+			   /* $('#back').click(function(){
+			        parent.history.back();
+			        return false;
+				    });*/
+
+				$('#logo').click(function(){
+					$('#topbar, div#article, div#bgphoto').animate({left: '80%'})
+					$('.wikicon-li, .wikicon-ul').fadeIn('slow');
+
+})
+
+
 		});
 		</script>
 
@@ -89,6 +103,28 @@
 			<i class="wikicon wikicon-tick" id="progressive-icon"></i>
 
 		</div>
+
+		<!-- LEFT DRAWER -->
+<div id="left-drawer" >
+	<ul class="wikicon-ul">
+		<li><i class="wikicon-li wikicon-left wikicon-puzzle"></i>My contributions</li>
+		<li><i class="wikicon-li wikicon-left wikicon-bookmark"></i>To Read</li>
+		<li><i class="wikicon-li wikicon-left wikicon-wikitrail"></i>My Wikitrail</li>
+		<li><i class="wikicon-li wikicon-left wikicon-gear"></i>Settings</li>
+
+		<li><i class="wikicon-li wikicon-left wikicon-user-face-smile"></i>Mun May</li>
+		<li><i class="wikicon-li wikicon-left wikicon-wikitrail"></i>See all notifications</li>
+
+		<li><i class="wikicon-li wikicon-left wikicon-pencil"></i>Edit</li>
+		<li><i class="wikicon-li wikicon-left wikicon-image-add"></i>Add Image</li>
+		<li><i class="wikicon-li wikicon-left wikicon-link"></i>Add Link</li>
+		<li><i class="wikicon-li wikicon-left wikicon-quotes-add"></i>Add Reference</li>
+		<li><i class="wikicon-li wikicon-left wikicon-speech-bubbles"></i>Participate</li>
+
+	</ul>
+</div>
+
+</ul>
 
 		<div class="wrapper">
 		<div id="bgphoto"></div>

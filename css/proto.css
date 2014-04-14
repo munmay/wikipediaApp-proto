@@ -55,9 +55,9 @@
   background-image: url('../images/W_gray.svg');
   background-repeat: no-repeat;
   right: 0;
-  margin-top: 10px;
-  height: 30;
-  margin-left: 12;
+  margin-top: 6px;
+  height: 38;
+  margin-left: 8;
   display: hidden;
   }
 
@@ -132,7 +132,7 @@ p{
   background-repeat: no-repeat;
   right: 0;
   margin-top: 10px;
-  margin-left: 23;
+  margin-left: 16;
   width: 30;
   height: 30;
   display: none;
@@ -151,43 +151,31 @@ p{
   top: 9;
 }
 
-#logo, .wikicon{
-	width: 40px;
-	height: 40px;
-	position: absolute;
-	top: -5;
-	left: 3;
-	}
-
 
 #left-drawer{
-	font-family: helvetica neue;
-	width: 200px;
-	background-color: #00AF89;
-	line-height: 2em;
-	font-size: 1em;
-	padding: 2.4em;
-	color: #fff;
-	position: absolute;
-	left: 0;
-	top: 0;
+  font-family: helvetica neue;
+  width: 80%;
+  background-color: #00AF89;
+  line-height: 2em;
+  font-size: 1em;
+  padding: 1.5em;
+  color: #fff;
+  position: absolute;
+  left: 0;
+  top: 0;
+  -webkit-transition: left 300ms ease;
+
 }
 
 
 #progressive-icon{
   font-size: 3.2em;
   color: #00AF89;
-  margin-left: 240;
+  margin-left: 245;
   top: -8;
   display: none;
 }
 
-.icon{
-	font-size: 2em;
-	padding: 0.2em;
-	color: #fff;
-	position: absolute;
-}
 
 .wikicon {
   display: inline-block;
@@ -201,6 +189,20 @@ p{
   color: #777;
   overflow: visible;
   vertical-align: text-bottom;
+}
+
+.wikicon-left {
+  display: inline-block;
+  margin: 0 -0.2em;
+  font-family: 'Wikicon-Regular';
+  -webkit-font-smoothing: antialiased;
+  font-size: 2.5em;
+  font-style: normal;
+  font-weight: normal;
+  line-height: inherit;
+  color: #FFF;
+  overflow: visible;
+  vertical-align: sub;
 }
 
 
@@ -218,6 +220,20 @@ textarea {
   line-height: 26px;
 }
 
+.wikicon-ul {
+  padding-left: 0;
+  list-style-type: none;
+  display: none;
+}
+
+.wikicon-li {
+  left: -2em;
+  width: 2em;
+  top: 0.14em;
+  text-align: center;
+  display: none;
+
+}
 
 
 /* WIKIPEDIA LOGO e000-021
