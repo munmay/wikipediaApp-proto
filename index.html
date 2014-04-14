@@ -18,13 +18,9 @@
 
 			$(document).ready( function() {
 				
-			    if (window.navigator.standalone) {
-			      $("meta[name='apple-mobile-web-app-status-bar-style']").remove();
-			      $('#in_web_clips').show();
-			    }
-			    else {
-			      $('#in_safari').show();
-			    }
+				if (window.navigator.standalone) {
+				  $("meta[name='apple-mobile-web-app-status-bar-style']").remove();
+				}
 
 			//Hide chrome
 
