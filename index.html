@@ -15,20 +15,21 @@
 
 			$(document).ready( function() {
 
-				//Hide chrome
-				
+
+			//Hide chrome
+
 				window.addEventListener("load",function() {
 				setTimeout(function(){
 					window.scrollTo(0, 1);
-				}, 0);
+				}, 0);});
 
-				// Animate on landing
 
-		//		$('#article').stop().animate({"top" : (Number($('#article').css('top').replace('px',''))+25)+'px'});
+			// Animate on landing
+
 				$('#article').animate({top: '270'})
 			    $("#bgphoto").animate({zoom:'100%'});
 
-				// Set the searchbox text to the value of the section headers as they scroll
+			// Set the searchbox text to the value of the section headers as they scroll
 
 				$('.section h1, .section h2').waypoint(function(direction) { 	// Find all .sectiontitle elements and attach a waypoint
 					
@@ -40,7 +41,7 @@
 
 
 
-				// This swaps search & edit icons on scroll
+			// This swaps search & edit icons on scroll
 
 				$(document).bubbaTonks(function(dist){
 							console.log('down '+ dist);
@@ -59,7 +60,7 @@
 					);
 
 
-				// This allows users to start editing
+			// This allows users to start editing
 				$('#edit').click(function(){
 
 					var curTitle = $('#searchbox').html();
@@ -70,9 +71,7 @@
 
 					$("#back, #context, #progressive-icon").show();
 			})
-
-
-			});
+		});
 		</script>
 
 	</head>
