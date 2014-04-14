@@ -79,7 +79,8 @@
 				    });*/
 
 				$('#logo').click(function(){
-					$('#topbar, div#article, div#bgphoto').animate({left: '80%'})
+					$('#topbar').hide();
+					$('div#article, div#bgphoto').animate({top:'+=10%' , left: '80%', zoom: '50%'});
 					$('.wikicon-li, .wikicon-ul').fadeIn('slow');
 
 })

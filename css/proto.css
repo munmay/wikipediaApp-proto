@@ -154,7 +154,8 @@ p{
 
 #left-drawer{
   font-family: helvetica neue;
-  width: 80%;
+  width: 100%;
+  height: 100%;
   background-color: #00AF89;
   line-height: 2em;
   font-size: 1em;
@@ -163,8 +164,6 @@ p{
   position: absolute;
   left: 0;
   top: 0;
-  -webkit-transition: left 300ms ease;
-
 }
 
 
