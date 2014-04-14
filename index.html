@@ -82,13 +82,26 @@
 			//Left-drawer
 
 				$('#logo').click(function(){
-		//			$('#left-drawer').scrollTo(-200);
 
 					$('#topbar').hide();
 					$('div#article, div#bgphoto').animate({top:'+=10%' , left: '80%', zoom: '50%'});
 					$('.wikicon-li, .wikicon-ul').fadeIn('slow');
+				})
 
-})
+
+			//Exit Left-drawer
+
+				$('#article, #bgphoto').click(function(){
+
+					$('#topbar').show();
+					$('div#article, div#bgphoto').animate({top:'-=10%' , left: '0%', zoom: '100%'});
+					$('.wikicon-li, .wikicon-ul').fadeOut('slow');
+				})
+
+				$('#article, #bgphoto').on( "leftright", function() {
+					$('#topbar').show();
+					$('div#article, div#bgphoto').animate({top:'-=10%' , left: '0%', zoom: '100%'});
+					$('.wikicon-li, .wikicon-ul').fadeOut('slow'); })
 
 
 		});
