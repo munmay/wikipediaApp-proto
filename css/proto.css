@@ -14,33 +14,30 @@
 }
 
 
-body {
-    overflow: hidden;	
-}
 
 #bgphoto {
-	background-image: url('../images/SF.jpg');
-	background-repeat: no-repeat;
-	z-index: 10;
-	position: absolute;
-	left: 0;
-	top: 0;
-	width: 300px;
-	height: 1000;
-
+  background-image: url('../images/SF.jpg');
+  background-repeat: no-repeat;
+  z-index: 10;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 1000;
+  zoom: 110%;
 }
 
 #topbar{
-	background-color: #fff;
-	z-index: 100;
-	width: 300px;
-	position: absolute;
-	left: 0;
-	top: 0;
-	height: 50px;
-	opacity: 0.9;
-
+  background-color: #fff;
+  z-index: 100;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 50px;
+  opacity: 0.95;
 }
+
 #main {
     z-index: 1;
     position: absolute;
@@ -50,16 +47,108 @@ body {
     width: 300px;
     overflow: hidden;
     background-image: url('../images/SF.jpg'); 
-	background-repeat: no-repeat;
-   
+    background-repeat: no-repeat;
 }
 
-#child {
-    width: 100%;
-    overflow: auto;
-    height: 100%;
-    padding-right: 15px;
-    position: relative;
+
+#logo{
+  background-image: url('../images/W_gray.svg');
+  background-repeat: no-repeat;
+  right: 0;
+  margin-top: 10px;
+  height: 30;
+  margin-left: 12;
+  display: hidden;
+  }
+
+
+#searchbox {
+  font-family: sans-serif;
+  font-size: 0.8em;
+  color: #777;
+  padding-left: 5px;
+  padding-top: 20;
+  position: absolute;
+  left: 100px;
+  right: 0;
+}
+
+#searchboxicon{
+  width: 35px;
+  height: 35px;
+  background-image: url('../images/magnifying_glass_gray.svg');
+  background-repeat: no-repeat;
+  background-position: middle center;
+  position: absolute;
+  left: 65;
+  top: 8;
+}
+
+#edit{
+  width: 35px;
+  height: 35px;
+  background-image: url('../images/pencil_gray.svg');
+  background-repeat: no-repeat;
+  background-position: middle center;
+  position: absolute;
+  left: 65;
+  top: -30;
+}
+
+#article {
+  background-color: #fff;
+  width: 100%;
+  z-index: 50;
+  position: absolute;
+  left: 0;
+  top: 300;
+}
+
+h1{
+  margin: 20px;
+  font: georgia;
+  font-size: 2.5em;
+  color: #333;
+}
+
+h2{
+  margin: 20px;
+  font: georgia;
+  font-size: 2em;
+  color: #333;
+}
+
+p{
+  margin: 20px;
+  font-family: sans-serif;
+  font-size: 1em;
+  color: #555;
+  line-height: 26px;
+}
+
+
+#back{
+  background-image: url('../images/x_gray.svg');
+  background-repeat: no-repeat;
+  right: 0;
+  margin-top: 10px;
+  margin-left: 23;
+  width: 30;
+  height: 30;
+  display: none;
+  }
+
+
+#context{
+  font-family: sans-serif;
+  font-size: 0.8em;
+  color: #333;
+  padding-left: 5px;
+  padding-top: 9;
+  position: absolute;
+  left: 60;
+  display: none; 
+  top: 9;
 }
 
 #logo, .wikicon{
@@ -67,49 +156,9 @@ body {
 	height: 40px;
 	position: absolute;
 	top: -5;
-	left: 6;
-}
+	left: 3;
+	}
 
-#searchbox{
-	width: 35px;
-	height: 35px;
-	position: absolute;
-	left: 55;
-	top: -10;
-}
-
-#edit{
-	width: 35px;
-	height: 35px;
-	position: absolute;
-	left: 55;
-	top: -50;
-}
-
-#article {
-	background-color: #fff;
-	width: 300px;
-	z-index: 50;
-	position: absolute;
-	left: 0;
-	top: 250;
-}
-
-h1{
-	margin: 20px;
-	font: georgia;
-	font-size: 40px;
-	color: #333;
-}
-
-
-p{
-	margin: 20px;
-	font-family: sans-serif;
-	font-size: 16px;
-	color: #333;
-	line-height: 26px;
-}
 
 #left-drawer{
 	font-family: helvetica neue;
@@ -125,6 +174,14 @@ p{
 }
 
 
+#progressive-icon{
+  font-size: 3.3em;
+  color: #00AF89;
+  margin-left: 270;
+  top: -8;
+  display: none;
+}
+
 .icon{
 	font-size: 2em;
 	padding: 0.2em;
@@ -132,13 +189,12 @@ p{
 	position: absolute;
 }
 
-
 .wikicon {
   display: inline-block;
   margin: 0 -0.2em;
   font-family: 'Wikicon-Regular';
   -webkit-font-smoothing: antialiased;
-  font-size: 3em;
+  font-size: 3.2em;
   font-style: normal;
   font-weight: normal;
   line-height: inherit;
@@ -146,6 +202,23 @@ p{
   overflow: visible;
   vertical-align: text-bottom;
 }
+
+
+textarea {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-width: 0 0 0 0;
+  padding: 60 20 20 20;
+  background-color: #EEE;
+  color: #555;
+  font-family: sans-serif;
+  font-size: 1em;
+  line-height: 26px;
+}
+
+
 
 /* WIKIPEDIA LOGO e000-021
 */

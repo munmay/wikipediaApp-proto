@@ -2,14 +2,19 @@
 	e.fn.bubbaTonks = function (e, t, n, r) { 
 		if (typeof n == "undefined") { 
 			n = false } var i = null; if (typeof r != "undefined") { 
-				i = this.find(r).first() } 
+				i = this.find(r).first() 
+			} 
 		else { i = this.children().first() } 
 		if (i.length == 0) { 
+			
 			i = this.contents() } 
+			
 			var s = i.top; 
 			var o = null; 
 			this.scroll(function () { 
-				var r = i.offset().top; 
+				
+				var r = i.offset().top - $(window).scrollTop();
+				
 				if (r > s) { 
 					if (n && o == "up") { 
 						s = r; return } o = "up"; 

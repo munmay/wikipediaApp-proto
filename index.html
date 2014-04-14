@@ -1,100 +1,154 @@
 <html>
 	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<script src="libs/jquery.js"></script>
-		<link href="css/bootstrap.min.css" rel="stylesheet">
-		<link rel="stylesheet" type="text/css" href="css/proto.css" />
-		<script src="libs/respond.js"></script>
 		<script src="libs/bubbatonks.js"></script>
-
+		<script src="libs/waypoints.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/proto.css" />
+		<script src="libs/bootstrap.min.js"></script>
+		<!--link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" /-->
 
 		<script>
 
-			$(document).ready( function() {
-				$('#child').bubbaTonks(
 
-						function(dist){
+			$(document).ready( function() {
+
+				// Animate on landing
+
+		//		$('#article').stop().animate({"top" : (Number($('#article').css('top').replace('px',''))+25)+'px'});
+				$('#article').animate({top: '270'})
+			    $("#bgphoto").animate({zoom:'100%'});
+
+				// Set the searchbox text to the value of the section headers as they scroll
+
+				$('.section h1, .section h2').waypoint(function(direction) { 	// Find all .sectiontitle elements and attach a waypoint
+					
+					$('#searchbox').html( $(this).html() ); 		// when the .sectiontitle elements hit the top of the screen +50 pixels
+																	// Find #searchbox and make it's internal text equal to the internal
+																	// text of the .sectiontitle element
+				}, {offset: 50});
+
+
+
+
+				// This swaps search & edit icons on scroll
+
+				$(document).bubbaTonks(function(dist){
 							console.log('down '+ dist);
-							$('#edit').animate({ top :'-50px'}, 100, function() {
-													    				$('#searchbox').animate({top: '-10px'}, 100);
-													  					});
+							$('#edit').animate({ top :'-30px'}, 100, function() {
+													    		$('#searchboxicon').animate({top: '7px'}, 100);
+													  			});
 						},
 						function(dist){
 							console.log('up '+ dist);
-							$('#searchbox').animate({ top :'-50px'}, 100, function() {
-													    				$('#edit').animate({top: '-10px'}, 100);
-													  					});
-							
-						},
-						true
+							$('#searchboxicon').animate({ top :'-30px'}, 100, function() {
+													    		$('#edit').animate({top: '7px'}, 100);
+													  			});
+							},
+						true,
+						'#article'
 					);
+
+
+				// This allows users to start editing
+				$('#edit').click(function(){
+
+					var curTitle = $('#searchbox').html();
+					var parentatt = $(".section h2:contains("+curTitle+"),.section h1:contains("+curTitle+")").parent().attr('mockTemplate');
+					$(".wrapper").html($('#'+parentatt).html());
+
+					$("#logo, #searchboxicon, #searchbox, #edit").hide();
+
+					$("#back, #context, #progressive-icon").show();
+			})
+
+
 			});
 		</script>
+
 	</head>
-
-
-
 
 	<body>
 
 		<div id="topbar">
-			<div id="logo"><i class="wikicon wikicon-cap-w"></i></div>
-			<div id="searchbox" class="wikicon wikicon-magnifying-glass"></div>
-			<div id="edit" class="wikicon">&#xe800;</div>
-		</div> 
+			<div id="logo "></div>
+			<div id="searchboxicon"></div>
+			<div id="edit"></div>
+			<div id="searchbox"></div>
+			<div id="logo"></div>
+			<div id="back"></div>
+			<div id="context"><b>Edit</b> San Francisco </div>
+			<i class="wikicon wikicon-tick" id="progressive-icon"></i>
 
-
-
-<!-- LEFT DRAWER -->
-
-<div>
-	<ul id="left-drawer">
-		<li><i class="wikicon wikicon-puzzle icon"></i>My contributions</li>
-		<li><i class="wikicon wikicon-bookmark icon"></i>To Read</li>
-		<li><i class="wikicon wikicon-wikitrail icon"></i>My Wikitrail</li>
-		<li><i class="wikicon wikicon-gear icon"></i>Settings</li>
-
-		<li><i class="wikicon wikicon-user-face-smile icon"></i>Mun May</li>
-		<li><i class="wikicon wikicon-wikitrail icon"></i>See all notifications</li>
-
-		<li><i class="wikicon wikicon-pencil icon"></i>Edit</li>
-		<li><i class="wikicon wikicon-image-add icon"></i>Add Image</li>
-		<li><i class="wikicon wikicon-link icon"></i>Add Link</li>
-		<li><i class="wikicon wikicon-quotes-add icon"></i>Add Reference</li>
-		<li><i class="wikicon wikicon-speech-bubbles icon"></i>Participate</li>
-	</ul>
-</div>
-
-</ul>
-
-
-
-
-<div id="main">
-
-    <div id="child">
-		<div id="article">
-			<h1>San Francisco</h1>
-
-			<p> San Francico oficialy the City and County of Sn Francsco, is the leading financial and cultural center of Northern California and the Sa Francsco Bay Area. The only consolidated city-county in California, San Francisco encompasses a land area of about 46.9 square miles (121 km2) on the northern end of the San Francisco Peninsula, giving it a density of about 17,620 people per square mile. It is the most densely settled lrge city (population greater than 200,000) in the state of California and the second-most densely populated major city in the United States after Nw York Cty. San Francisco is the fourth most populous city in California, after Los Angeles, San Diego and San Jose, and the 14th most populous city in the United States, with a Census-estimated 2012 population of 825,863. The city is also the financial and cultural hub of the larger San Jose-San Francisco-Oakland combined statistical area, with a population of 8.4 million. San Francisco (Spanish for "Saint Francis") was founded on June 29, 1776, when colonists from Spain established a fort at the Golden Gate and a mission named for St. Francis of Assisi a few miles away. The California Gold Rush of 1849 brought rapid growth, making it the largest city on the West Coast at the time. Due to the growth of its population, San Francisco became a consolidated city-county in 1856. After three-quarters of the city was destroyed by the 1906 earthquake and fire, San Francisco was quickly rebuilt, hosting the Panama-Pacific International Exposition nine years later. During World War II, San Francisco was the port of embarkation for service members shipping out to the Pacific Theater. After the war, the confluence of returning servicemen, massive immigration, liberalizing attitudes, and other factors led to the Summer of Love and the gay rights movement, cementing San Francisco as a center of liberal activism in the United States. San Francisco is a popular tourist destination, known for its cool summers, fog, steep rolling hills, eclectic mix of architecture, and landmarks including the Golden Gate Bridge, cable cars, the former prison on Alcatraz Island, and its Chinatown district. It is also a primary banking and finance center. <br /><br /></p>
-
-
-			<h1>History</h1>
-
-			<p>The earliest archaeological evidence of human habitation of the territory of the city of San Francisco dates to 3000 BC. The Yelamu group of the Ohlone people resided in a few small villages when an overland Spanish exploration party, led by Don Gaspar de Portolà arrived on November 2, 1769, the first documented European visit to San Francisco Bay. Seven years later, on March 28, 1776, the Spanish established the Presidio of San Francisco, followed by a mission, Mission San Francisco de Asís (Mission Dolores), established by the Spanish explorer Juan Bautista de Anza.
-
-			Upon independence from Spain in 1821, the area became part of Mexico. Under Mexican rule, the mission system gradually ended, and its lands became privatized. In 1835, Englishman William Richardson erected the first independent homestead, near a boat anchorage around what is today Portsmouth Square. Together with Alcalde Francisco de Haro, he laid out a street plan for the expanded settlement, and the town, named Yerba Buena, began to attract American settlers. Commodore John D. Sloat claimed California for the United States on July 7, 1846, during the Mexican-American War, and Captain John B. Montgomery arrived to claim Yerba Buena two days later. Yerba Buena was renamed San Francisco on January 30 of the next year, and Mexico officially ceded the territory to the United States at the end of the war. Despite its attractive location as a port and naval base, San Francisco was still a small settlement with inhospitable geography.
-
-			Portsmouth Square in 1851 <br />
-			The California Gold Rush brought a flood of treasure seekers. With their sourdough bread in tow, prospectors accumulated in San Francisco over rival Benicia, raising the population from 1,000 in 1848 to 25,000 by December 1849. The promise of fabulous riches was so strong that crews on arriving vessels deserted and rushed off to the gold fields, leaving behind a forest of masts in San Francisco harbor. California was quickly granted statehood, and the U.S. military built Fort Point at the Golden Gate and a fort on Alcatraz Island to secure the San Francisco Bay. Silver discoveries, including the Comstock Lode in 1859, further drove rapid population growth. With hordes of fortune seekers streaming through the city, lawlessness was common, and the Barbary Coast section of town gained notoriety as a haven for criminals, prostitution, and gambling.
-
-			Entrepreneurs sought to capitalize on the wealth generated by the Gold Rush. Early winners were the banking industry, with the founding of Wells Fargo in 1852 and the Bank of California in 1864. Development of the Port of San Francisco and the establishment in 1869 of overland access to the Eastern U.S. rail system via the newly completed Pacific Railroad (the construction of which the city only reluctantly helped support) helped make the Bay Area a center for trade. Catering to the needs and tastes of the growing population, Levi Strauss opened a dry goods business and Domingo Ghirardelli began manufacturing chocolate. Immigrant laborers made the city a polyglot culture, with Chinese railroad workers creating the city's Chinatown quarter. In 1870, Asians made up 8% of the population. The first cable cars carried San Franciscans up Clay Street in 1873. The city's sea of Victorian houses began to take shape, and civic leaders campaigned for a spacious public park, resulting in plans for Golden Gate Park. San Franciscans built schools, churches, theaters, and all the hallmarks of civic life. The Presidio developed into the most important American military installation on the Pacific coast. By 1890, San Francisco's population approached 300,000, making it the eighth largest city in the U.S. at the time. Around 1901, San Francisco was a major city known for its flamboyant style, stately hotels, ostentatious mansions on Nob Hill, and a thriving arts scene. The first North American plague epidemic was the San Francisco plague of 1900–1904.
-
-			At 5:12 am on April 18, 1906, a major earthquake struck San Francisco and northern California. As buildings collapsed from the shaking, ruptured gas lines ignited fires that spread across the city and burned out of control for several days. With water mains out of service, the Presidio Artillery Corps attempted to contain the inferno by dynamiting blocks of buildings to create firebreaks. More than three-quarters of the city lay in ruins, including almost all of the downtown core. Contemporary accounts reported that 498 people lost their lives, though modern estimates put the number in the several thousands. More than half the city's population of 400,000 were left homeless. Refugees settled temporarily in makeshift tent villages in Golden Gate Park, the Presidio, on the beaches, and elsewhere. Many fled permanently to the East Bay. </p>
 		</div>
-	</div>
-</div>
 
+		<div class="wrapper">
+		<div id="bgphoto"></div>
+		<div id="article">
+
+			<div class="section" mockTemplate = "sfMock">
+
+				<h1>San Francisco</h1>
+				<p>San Francisco officially the City and County of San Francisco, is the leading financial and cultural center of Northern California and the San Francisco Bay Area.[citation needed] The only consolidated city-county in California, San Francisco encompasses a land area of about 46.9 square miles (121 km2) on the northern end of the San Francisco Peninsula, giving it a density of about 17,620 people per square mile. It is the most densely settled large city (population greater than 200,000) in the state of California and the second-most densely populated major city in the United States after New York City. San Francisco is the fourth most populous city in California, after Los Angeles, San Diego and San Jose, and the 14th most populous city in the United States, with a Census-estimated 2012 population of 825,863. The city is also the financial and cultural hub of the larger San Jose-San Francisco-Oakland combined statistical area, with a population of 8.4 million. San Francisco (Spanish for "Saint Francis") was founded on June 29, 1776, when colonists from Spain established a fort at the Golden Gate and a mission named for St. Francis of Assisi a few miles away. The California Gold Rush of 1849 brought rapid growth, making it the largest city on the West Coast at the time. Due to the growth of its population, San Francisco became a consolidated city-county in 1856. After three-quarters of the city was destroyed by the 1906 earthquake and fire, San Francisco was quickly rebuilt, hosting the Panama-Pacific International Exposition nine years later. During World War II, San Francisco was the port of embarkation for service members shipping out to the Pacific Theater.[18] After the war, the confluence of returning servicemen, massive immigration, liberalizing attitudes, and other factors led to the Summer of Love and the gay rights movement, cementing San Francisco as a center of liberal activism in the United States. San Francisco is a popular tourist destination, known for its cool summers, fog, steep rolling hills, eclectic mix of architecture, and landmarks including the Golden Gate Bridge, cable cars, the former prison on Alcatraz Island, and its Chinatown district. It is also a primary banking and finance center.</p>
+			
+			</div>
+
+
+			<div class="section" mockTemplate = "historyMock">
+
+				<h2>History</h2>
+				<p>The earliest archaeological evidence of human habitation of the territory of the city of San Francisco dates to 3000 BC.[20] The Yelamu group of the Ohlone people resided in a few small villages when an overland Spanish exploration party, led by Don Gaspar de Portolà arrived on November 2, 1769, the first documented European visit to San Francisco Bay.[21] Seven years later, on March 28, 1776, the Spanish established the Presidio of San Francisco, followed by a mission, Mission San Francisco de Asís (Mission Dolores), established by the Spanish explorer Juan Bautista de Anza.</p>
+
+				<p>Upon independence from Spain in 1821, the area became part of Mexico. Under Mexican rule, the mission system gradually ended, and its lands became privatized. In 1835, Englishman William Richardson erected the first independent homestead, near a boat anchorage around what is today Portsmouth Square. Together with Alcalde Francisco de Haro, he laid out a street plan for the expanded settlement, and the town, named Yerba Buena, began to attract American settlers. Commodore John D. Sloat claimed California for the United States on July 7, 1846, during the Mexican-American War, and Captain John B. Montgomery arrived to claim Yerba Buena two days later. Yerba Buena was renamed San Francisco on January 30 of the next year, and Mexico officially ceded the territory to the United States at the end of the war. Despite its attractive location as a port and naval base, San Francisco was still a small settlement with inhospitable geography.</p>
+			</div>
+
+
+			<div class="section" mockTemplate = "portsMock">
+
+				<h2>Portsmouth Square in 1851</h3>
+				<p>The California Gold Rush brought a flood of treasure seekers. With their sourdough bread in tow, prospectors accumulated in San Francisco over rival Benicia, raising the population from 1,000 in 1848 to 25,000 by December 1849. The promise of fabulous riches was so strong that crews on arriving vessels deserted and rushed off to the gold fields, leaving behind a forest of masts in San Francisco harbor. California was quickly granted statehood, and the U.S. military built Fort Point at the Golden Gate and a fort on Alcatraz Island to secure the San Francisco Bay. Silver discoveries, including the Comstock Lode in 1859, further drove rapid population growth. With hordes of fortune seekers streaming through the city, lawlessness was common, and the Barbary Coast section of town gained notoriety as a haven for criminals, prostitution, and gambling.</p>
+
+				<p>Entrepreneurs sought to capitalize on the wealth generated by the Gold Rush. Early winners were the banking industry, with the founding of Wells Fargo in 1852 and the Bank of California in 1864. Development of the Port of San Francisco and the establishment in 1869 of overland access to the Eastern U.S. rail system via the newly completed Pacific Railroad (the construction of which the city only reluctantly helped support) helped make the Bay Area a center for trade. Catering to the needs and tastes of the growing population, Levi Strauss opened a dry goods business and Domingo Ghirardelli began manufacturing chocolate. Immigrant laborers made the city a polyglot culture, with Chinese railroad workers creating the city's Chinatown quarter. In 1870, Asians made up 8% of the population. The first cable cars carried San Franciscans up Clay Street in 1873. The city's sea of Victorian houses began to take shape, and civic leaders campaigned for a spacious public park, resulting in plans for Golden Gate Park. San Franciscans built schools, churches, theaters, and all the hallmarks of civic life. The Presidio developed into the most important American military installation on the Pacific coast. By 1890, San Francisco's population approached 300,000, making it the eighth largest city in the U.S. at the time. Around 1901, San Francisco was a major city known for its flamboyant style, stately hotels, ostentatious mansions on Nob Hill, and a thriving arts scene. The first North American plague epidemic was the San Francisco plague of 1900–1904.</p>
+
+				<p>At 5:12 am on April 18, 1906, a major earthquake struck San Francisco and northern California. As buildings collapsed from the shaking, ruptured gas lines ignited fires that spread across the city and burned out of control for several days. With water mains out of service, the Presidio Artillery Corps attempted to contain the inferno by dynamiting blocks of buildings to create firebreaks.[36] More than three-quarters of the city lay in ruins, including almost all of the downtown core. Contemporary accounts reported that 498 people lost their lives, though modern estimates put the number in the several thousands. More than half the city's population of 400,000 were left homeless. Refugees settled temporarily in makeshift tent villages in Golden Gate Park, the Presidio, on the beaches, and elsewhere. Many fled permanently to the East Bay.</p>
+
+			</div>
+
+		</div>
+		</div>
+		</div>
+
+    <div style="display:none;" id ="sfMock">
+		<textarea>
+
+==San Francisco==
+The earliest archaeological evidence of human habitation of the territory of the city of San Francisco dates to 3000 BC.[20] [[The Yelamu group]] of the Ohlone people resided in a few small villages when an overland Spanish exploration party, led by [[Don Gaspar de Portolà]] arrived on November 2, 1769, the first documented European visit to San Francisco Bay.[21] Seven years later, on March 28, 1776, the Spanish established the [[Presidio of San Francisco]], followed by a mission, Mission San Francisco de Asís ([[Mission Dolores]]), established by the Spanish explorer [[Juan Bautista de Anza]].
+
+Upon independence from Spain in 1821, the area became part of Mexico. Under Mexican rule, the mission system gradually ended, and its lands became privatized. In 1835, Englishman William Richardson erected the first independent homestead, near a boat anchorage around what is today [[Portsmouth Square]]. Together with [[Alcalde Francisco de Haro]], he laid out a street plan for the expanded settlement, and the town, named [[Yerba Buena]], began to attract American settlers. [[Commodore John D. Sloat]] claimed California for the United States on July 7, 1846, during the [[Mexican-American War]], and [[Captain John B. Montgomery]] arrived to claim Yerba Buena two days later. Yerba Buena was renamed San Francisco on January 30 of the next year, and Mexico officially ceded the territory to the United States at the end of the war. Despite its attractive location as a port and naval base, San Francisco was still a small settlement with inhospitable geography.
+			
+		</textarea>
+
+
+    <div style="display:none;" id ="historyMock">
+		<textarea>
+
+==History==
+The earliest archaeological evidence of human habitation of the territory of the city of San Francisco dates to 3000 BC.[20] [[The Yelamu group]] of the Ohlone people resided in a few small villages when an overland Spanish exploration party, led by [[Don Gaspar de Portolà]] arrived on November 2, 1769, the first documented European visit to San Francisco Bay.[21] Seven years later, on March 28, 1776, the Spanish established the [[Presidio of San Francisco]], followed by a mission, Mission San Francisco de Asís ([[Mission Dolores]]), established by the Spanish explorer [[Juan Bautista de Anza]].
+
+Upon independence from Spain in 1821, the area became part of Mexico. Under Mexican rule, the mission system gradually ended, and its lands became privatized. In 1835, Englishman William Richardson erected the first independent homestead, near a boat anchorage around what is today [[Portsmouth Square]]. Together with [[Alcalde Francisco de Haro]], he laid out a street plan for the expanded settlement, and the town, named [[Yerba Buena]], began to attract American settlers. [[Commodore John D. Sloat]] claimed California for the United States on July 7, 1846, during the [[Mexican-American War]], and [[Captain John B. Montgomery]] arrived to claim Yerba Buena two days later. Yerba Buena was renamed San Francisco on January 30 of the next year, and Mexico officially ceded the territory to the United States at the end of the war. Despite its attractive location as a port and naval base, San Francisco was still a small settlement with inhospitable geography.
+			
+		</textarea>
+    </div>
+
+
+    <div style="display:none;" id ="portsMock">
+		<textarea>
+
+==Portsmouth Square in 1851==
+The earliest archaeological evidence of human habitation of the territory of the city of San Francisco dates to 3000 BC.[20] [[The Yelamu group]] of the Ohlone people resided in a few small villages when an overland Spanish exploration party, led by [[Don Gaspar de Portolà]] arrived on November 2, 1769, the first documented European visit to San Francisco Bay.[21] Seven years later, on March 28, 1776, the Spanish established the [[Presidio of San Francisco]], followed by a mission, Mission San Francisco de Asís ([[Mission Dolores]]), established by the Spanish explorer [[Juan Bautista de Anza]].
+
+Upon independence from Spain in 1821, the area became part of Mexico. Under Mexican rule, the mission system gradually ended, and its lands became privatized. In 1835, Englishman William Richardson erected the first independent homestead, near a boat anchorage around what is today [[Portsmouth Square]]. Together with [[Alcalde Francisco de Haro]], he laid out a street plan for the expanded settlement, and the town, named [[Yerba Buena]], began to attract American settlers. [[Commodore John D. Sloat]] claimed California for the United States on July 7, 1846, during the [[Mexican-American War]], and [[Captain John B. Montgomery]] arrived to claim Yerba Buena two days later. Yerba Buena was renamed San Francisco on January 30 of the next year, and Mexico officially ceded the territory to the United States at the end of the war. Despite its attractive location as a port and naval base, San Francisco was still a small settlement with inhospitable geography.
+			
+		</textarea>
 
 	</body>
 </html>
