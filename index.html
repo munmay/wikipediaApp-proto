@@ -1,6 +1,7 @@
 <html>
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
 
 		<script src="libs/jquery.js"></script>
 		<script src="libs/bubbatonks.js"></script>
@@ -13,6 +14,13 @@
 
 
 			$(document).ready( function() {
+
+				//Hide chrome
+				
+				window.addEventListener("load",function() {
+				setTimeout(function(){
+					window.scrollTo(0, 1);
+				}, 0);
 
 				// Animate on landing
 
