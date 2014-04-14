@@ -164,7 +164,7 @@ p{
   font-size: 1em;
   padding: 1.5em;
   color: #fff;
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   display: none;
