@@ -3,6 +3,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 
+		<meta content='initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+
+
 		<script src="libs/jquery.js"></script>
 		<script src="libs/bubbatonks.js"></script>
 		<script src="libs/waypoints.js"></script>
@@ -15,6 +18,9 @@
 
 			$(document).ready( function() {
 
+			if (window.navigator.standalone) {
+			  $("meta[name='apple-mobile-web-app-status-bar-style']").remove();
+			}
 
 			//Hide chrome
 
@@ -82,7 +88,7 @@
 			//Left-drawer
 
 				$('#logo').click(function(){
-
+					$('#left-drawer').show();
 					$('#topbar').hide();
 					$('div#article, div#bgphoto').animate({top:'+=10%' , left: '80%', zoom: '50%'});
 					$('.wikicon-li, .wikicon-ul').fadeIn('slow');
@@ -92,16 +98,11 @@
 			//Exit Left-drawer
 
 				$('#article, #bgphoto').click(function(){
-
-					$('#topbar').show();
+					$('#topbar').show('slow');
 					$('div#article, div#bgphoto').animate({top:'-=10%' , left: '0%', zoom: '100%'});
 					$('.wikicon-li, .wikicon-ul').fadeOut('slow');
+					$('#left-drawer').hide(2000);
 				})
-
-				$('#article, #bgphoto').on( "leftright", function() {
-					$('#topbar').show();
-					$('div#article, div#bgphoto').animate({top:'-=10%' , left: '0%', zoom: '100%'});
-					$('.wikicon-li, .wikicon-ul').fadeOut('slow'); })
 
 
 		});
@@ -132,7 +133,7 @@
 		<li><i class="wikicon-li wikicon-left wikicon-gear"></i>Settings</li>
 
 		<li><i class="wikicon-li wikicon-left wikicon-user-face-smile">&#xe601;</i>Mun May</li>
-		<li><i class="wikicon-li wikicon-left wikicon-wikitrail"></i>See all notifications</li>
+		<li><i class="wikicon-li wikicon-left wikicon-wikitrail">W</i>See all notifications</li>
 
 		<li><i class="wikicon-li wikicon-left wikicon-pencil">&#xe800;</i>Edit</li>
 		<li><i class="wikicon-li wikicon-left wikicon-image-add">&#xe842;</i>Add Image</li>
