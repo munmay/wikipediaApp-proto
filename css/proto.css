@@ -13,7 +13,10 @@
        url('../fonts/Wikicon.svg#8088f7bbbdba5c9832b27edb3dfcdf09') format('svg'); 
 }
 
-
+html, body {
+   height: 100%;
+   margin: 0;
+}
 
 #bgphoto {
   background-image: url('../images/SF.jpg');
