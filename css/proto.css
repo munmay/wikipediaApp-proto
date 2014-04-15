@@ -154,10 +154,10 @@ p{
   top: 9;
 }
 
-.left-drawer-wrapper{
+/*.left-drawer-wrapper{
   overflow-y: scroll;
   position: fixed;
-}
+}*/
 
 #left-drawer{
   font-family: helvetica neue;
