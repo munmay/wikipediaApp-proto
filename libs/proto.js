@@ -1,16 +1,16 @@
 $(document).ready( function() {
 
-	if (window.navigator.standalone) {
-	  $("meta[name='apple-mobile-web-app-status-bar-style']").remove();
-	}
+//	if (window.navigator.standalone) {
+//	  $("meta[name='apple-mobile-web-app-status-bar-style']").remove();
+//	}
 
 
 //Hide chrome
 
-	window.addEventListener("load",function() {
-	setTimeout(function(){
-		window.scrollTo(0, 1);
-	}, 0);});
+//	window.addEventListener("load",function() {
+//	setTimeout(function(){
+//		window.scrollTo(0, 1);
+//	}, 0);});
 
 // Animate on landing
 
@@ -19,7 +19,7 @@ $(document).ready( function() {
 
 
 
-    
+
 
 // Set the searchbox text to the value of the section headers as they scroll
 
@@ -30,20 +30,20 @@ $(document).ready( function() {
 
 // This swaps search & edit icons on scroll
 
-	 var scrollDist = 0;
+	var scrollDist = 0;
 	$(document).bubbaTonks(function(dist){
 				
-				console.log('down '+ dist+' scrollDist:'+scrollDist);
-				$('#edit').animate({ top :'-30px'}, 100, function() {$('#searchboxicon').animate({top: '7px'}, 100);});
-		},
-			function(dist){
-				
-				console.log('up '+ dist+' scrollDist:'+scrollDist);
-				$('#searchboxicon').animate({ top :'-30px'}, 100, function() {$('#edit').animate({top: '7px'}, 100);});
-			},
-			true,
-			'#article'
-		);
+		console.log('down '+ dist+' scrollDist:'+scrollDist);
+		$('#edit').animate({ top :'-30px'}, 100, function() {$('#searchboxicon').animate({top: '7px'}, 100);});
+	},
+	
+	function(dist){
+		
+		console.log('up '+ dist+' scrollDist:'+scrollDist);
+		$('#searchboxicon').animate({ top :'-30px'}, 100, function() {$('#edit').animate({top: '7px'}, 100);});
+	},
+	true,
+	'#article');
 
 
 
@@ -81,7 +81,7 @@ $(document).ready( function() {
 		$('#topbar').hide();
 		$('div#article, div#bgphoto').animate({top:'+=10%' , left: '80%', zoom: '50%',overflow:'hidden'});
 		$('.wikicon-li, .wikicon-ul').fadeIn('slow');
-	})
+	});
 
 
 //Exit Left-drawer
@@ -91,7 +91,7 @@ $(document).ready( function() {
 		$('div#article, div#bgphoto').animate({top:'-=10%' , left: '0%', zoom: '100%',overflow:'auto'});
 		$('.wikicon-li, .wikicon-ul').fadeOut('slow');
 		$('#left-drawer').hide(2000);
-	})
+	});
 
 
 });
