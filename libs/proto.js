@@ -63,6 +63,7 @@ $(document).ready( function() {
 //Left-drawer
 
 	$('#logo').click(function(){
+		$('#left-drawer').show();
 		$('#topbar').hide();
 		$('div#article, div#bgphoto').animate({top:'+=10%' , left: '80%', zoom: '50%',overflow:'hidden'});
 		$('.wikicon-li, .wikicon-ul').fadeIn('slow');
@@ -75,6 +76,7 @@ $(document).ready( function() {
 		$('#topbar').show('slow');
 		$('div#article, div#bgphoto').animate({top:'-=10%' , left: '0%', zoom: '100%',overflow:'auto'});
 		$('.wikicon-li, .wikicon-ul').fadeOut('slow');
+		$('#left-drawer').hide(2000);
 	});
 
 
