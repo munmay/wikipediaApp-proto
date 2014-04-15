@@ -70,7 +70,7 @@ html, body {
   font-size: 0.8em;
   color: #777;
   padding-left: 5px;
-  padding-top: 20;
+  padding-top: 19;
   position: absolute;
   left: 100px;
   right: 0;
@@ -147,7 +147,7 @@ p{
   font-size: 0.8em;
   color: #333;
   padding-left: 5px;
-  padding-top: 9;
+  padding-top: 10;
   position: absolute;
   left: 60;
   display: none; 
@@ -246,18 +246,7 @@ textarea {
 }
 
 
-/* WIKIPEDIA LOGO e000-021
-*/
-
-.wikicon-cap-w:before {
-  content: "\57";
-}
-.wikicon-lower-w:before {
-  content: "\77";
-}
-
-
-/* UI ELEMENTS e000-021
+/* UI ELEMENTS e000-023
 */
 
 .wikicon-magnifying-glass:before {
@@ -326,6 +315,12 @@ textarea {
 .wikicon-pin:before {
   content: "\e021";
 }
+.wikicon-caret:before {
+  content: "\e022";
+}
+.wikicon-download:before {
+  content: "\e023";
+}
 
 
 /* STRIPES e040-043
@@ -338,6 +333,14 @@ textarea {
 }
 .wikicon-stripe-expanded:before {
   content: "\e042";
+}
+
+
+/* WIKIPEDIA LOGO e400
+*/
+
+.wikicon-w:before {
+  content: "\e400";
 }
 
 
@@ -463,14 +466,8 @@ textarea {
 }
 
 
-/* WIKI-X e900
+/* WIKI-x e900
 */
 .wikicon-wikitrail:before {
   content: "\e900";
 }
-
-
-
-
-
-
