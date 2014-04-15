@@ -47,19 +47,20 @@
 
 
 			// This swaps search & edit icons on scroll
-
+				 var scrollDist = 0;
 				$(document).bubbaTonks(function(dist){
-							console.log('down '+ dist);
-							$('#edit').animate({ top :'-30px'}, 100, function() {
-													    		$('#searchboxicon').animate({top: '7px'}, 100);
-													  			});
-						},
+
+							
+							console.log('down '+ dist+' scrollDist:'+scrollDist);
+							$('#edit').animate({ top :'-30px'}, 100, function() {$('#searchboxicon').animate({top: '7px'}, 100);});
+						
+					},
 						function(dist){
-							console.log('up '+ dist);
-							$('#searchboxicon').animate({ top :'-30px'}, 100, function() {
-													    		$('#edit').animate({top: '7px'}, 100);
-													  			});
-							},
+							
+							console.log('up '+ dist+' scrollDist:'+scrollDist);
+							$('#searchboxicon').animate({ top :'-30px'}, 100, function() {$('#edit').animate({top: '7px'}, 100);});
+							
+						},
 						true,
 						'#article'
 					);
@@ -70,18 +71,26 @@
 
 					var curTitle = $('#searchbox').html();
 					var parentatt = $(".section h2:contains("+curTitle+"),.section h1:contains("+curTitle+")").parent().attr('mockTemplate');
-					$(".wrapper").html($('#'+parentatt).html());
+					
+					$('#article,#bgphoto').hide();
+
+
+					$('#'+parentatt).show();
 
 					$("#logo, #searchboxicon, #searchbox, #edit").hide();
 
 					$("#back, #context, #progressive-icon").show();
 			})
 
-			//Go back
-			   /* $('#back').click(function(){
-			        parent.history.back();
-			        return false;
-				    });*/
+			//Exit editing
+			    $('#back').click(function(){
+					$("#logo, #searchboxicon, #searchbox, #edit").show();
+					$("#back, #context, #progressive-icon, #sfMock, textarea").hide();
+
+					$('#article,#bgphoto').show();
+					$('.mock').hode();
+
+})
 
 
 			//Left-drawer
@@ -111,6 +120,7 @@
 
 	<body>
 
+<!-- TOP <NAV></NAV> -->
 		<div id="topbar">
 			<div id="logo "></div>
 			<div id="searchboxicon"></div>
@@ -123,7 +133,10 @@
 
 		</div>
 
-		<!-- LEFT DRAWER -->
+
+
+<!-- LEFT DRAWER -->
+<div class="left-drawer-wrapper">
 <div id="left-drawer" >
 	<ul class="wikicon-ul">
 		<li><i class="wikicon-li wikicon-left wikicon-puzzle"></i>My contributions</li>
@@ -141,6 +154,7 @@
 		<li><i class="wikicon-li wikicon-left wikicon-speech-bubbles">&#xe811;</i>Participate</li>
 
 	</ul>
+</div>
 </div>
 
 </ul>
@@ -176,12 +190,8 @@
 				<p>At 5:12 am on April 18, 1906, a major earthquake struck San Francisco and northern California. As buildings collapsed from the shaking, ruptured gas lines ignited fires that spread across the city and burned out of control for several days. With water mains out of service, the Presidio Artillery Corps attempted to contain the inferno by dynamiting blocks of buildings to create firebreaks.[36] More than three-quarters of the city lay in ruins, including almost all of the downtown core. Contemporary accounts reported that 498 people lost their lives, though modern estimates put the number in the several thousands. More than half the city's population of 400,000 were left homeless. Refugees settled temporarily in makeshift tent villages in Golden Gate Park, the Presidio, on the beaches, and elsewhere. Many fled permanently to the East Bay.</p>
 
 			</div>
-
 		</div>
-		</div>
-		</div>
-
-    <div style="display:none;" id ="sfMock">
+<div  class="mock"  style="display:none; z-index:100;" id ="sfMock">
 		<textarea>
 
 ==San Francisco==
@@ -190,9 +200,9 @@ The earliest archaeological evidence of human habitation of the territory of the
 Upon independence from Spain in 1821, the area became part of Mexico. Under Mexican rule, the mission system gradually ended, and its lands became privatized. In 1835, Englishman William Richardson erected the first independent homestead, near a boat anchorage around what is today [[Portsmouth Square]]. Together with [[Alcalde Francisco de Haro]], he laid out a street plan for the expanded settlement, and the town, named [[Yerba Buena]], began to attract American settlers. [[Commodore John D. Sloat]] claimed California for the United States on July 7, 1846, during the [[Mexican-American War]], and [[Captain John B. Montgomery]] arrived to claim Yerba Buena two days later. Yerba Buena was renamed San Francisco on January 30 of the next year, and Mexico officially ceded the territory to the United States at the end of the war. Despite its attractive location as a port and naval base, San Francisco was still a small settlement with inhospitable geography.
 			
 		</textarea>
+	</div>
 
-
-    <div style="display:none;" id ="historyMock">
+    <div  class="mock"  style="display:none; z-index:100;" id ="historyMock">
 		<textarea>
 
 ==History==
@@ -204,7 +214,7 @@ Upon independence from Spain in 1821, the area became part of Mexico. Under Mexi
     </div>
 
 
-    <div style="display:none;" id ="portsMock">
+    <div class="mock" style="display:none; z-index:100;" id ="portsMock">
 		<textarea>
 
 ==Portsmouth Square in 1851==
@@ -213,6 +223,45 @@ The earliest archaeological evidence of human habitation of the territory of the
 Upon independence from Spain in 1821, the area became part of Mexico. Under Mexican rule, the mission system gradually ended, and its lands became privatized. In 1835, Englishman William Richardson erected the first independent homestead, near a boat anchorage around what is today [[Portsmouth Square]]. Together with [[Alcalde Francisco de Haro]], he laid out a street plan for the expanded settlement, and the town, named [[Yerba Buena]], began to attract American settlers. [[Commodore John D. Sloat]] claimed California for the United States on July 7, 1846, during the [[Mexican-American War]], and [[Captain John B. Montgomery]] arrived to claim Yerba Buena two days later. Yerba Buena was renamed San Francisco on January 30 of the next year, and Mexico officially ceded the territory to the United States at the end of the war. Despite its attractive location as a port and naval base, San Francisco was still a small settlement with inhospitable geography.
 			
 		</textarea>
+	</div>
+
+		</div>
+		
+		</div>
+
+    <div   style="display:none;" id ="sfMock">
+		<textarea>
+
+==San Francisco==
+The earliest archaeological evidence of human habitation of the territory of the city of San Francisco dates to 3000 BC.[20] [[The Yelamu group]] of the Ohlone people resided in a few small villages when an overland Spanish exploration party, led by [[Don Gaspar de Portolà]] arrived on November 2, 1769, the first documented European visit to San Francisco Bay.[21] Seven years later, on March 28, 1776, the Spanish established the [[Presidio of San Francisco]], followed by a mission, Mission San Francisco de Asís ([[Mission Dolores]]), established by the Spanish explorer [[Juan Bautista de Anza]].
+
+Upon independence from Spain in 1821, the area became part of Mexico. Under Mexican rule, the mission system gradually ended, and its lands became privatized. In 1835, Englishman William Richardson erected the first independent homestead, near a boat anchorage around what is today [[Portsmouth Square]]. Together with [[Alcalde Francisco de Haro]], he laid out a street plan for the expanded settlement, and the town, named [[Yerba Buena]], began to attract American settlers. [[Commodore John D. Sloat]] claimed California for the United States on July 7, 1846, during the [[Mexican-American War]], and [[Captain John B. Montgomery]] arrived to claim Yerba Buena two days later. Yerba Buena was renamed San Francisco on January 30 of the next year, and Mexico officially ceded the territory to the United States at the end of the war. Despite its attractive location as a port and naval base, San Francisco was still a small settlement with inhospitable geography.
+			
+		</textarea>
+	</div>
+
+    <div  style="display:none;" id ="historyMock">
+		<textarea>
+
+==History==
+The earliest archaeological evidence of human habitation of the territory of the city of San Francisco dates to 3000 BC.[20] [[The Yelamu group]] of the Ohlone people resided in a few small villages when an overland Spanish exploration party, led by [[Don Gaspar de Portolà]] arrived on November 2, 1769, the first documented European visit to San Francisco Bay.[21] Seven years later, on March 28, 1776, the Spanish established the [[Presidio of San Francisco]], followed by a mission, Mission San Francisco de Asís ([[Mission Dolores]]), established by the Spanish explorer [[Juan Bautista de Anza]].
+
+Upon independence from Spain in 1821, the area became part of Mexico. Under Mexican rule, the mission system gradually ended, and its lands became privatized. In 1835, Englishman William Richardson erected the first independent homestead, near a boat anchorage around what is today [[Portsmouth Square]]. Together with [[Alcalde Francisco de Haro]], he laid out a street plan for the expanded settlement, and the town, named [[Yerba Buena]], began to attract American settlers. [[Commodore John D. Sloat]] claimed California for the United States on July 7, 1846, during the [[Mexican-American War]], and [[Captain John B. Montgomery]] arrived to claim Yerba Buena two days later. Yerba Buena was renamed San Francisco on January 30 of the next year, and Mexico officially ceded the territory to the United States at the end of the war. Despite its attractive location as a port and naval base, San Francisco was still a small settlement with inhospitable geography.
+			
+		</textarea>
+    </div>
+
+
+    <div  style="display:none;" id ="portsMock">
+		<textarea>
+
+==Portsmouth Square in 1851==
+The earliest archaeological evidence of human habitation of the territory of the city of San Francisco dates to 3000 BC.[20] [[The Yelamu group]] of the Ohlone people resided in a few small villages when an overland Spanish exploration party, led by [[Don Gaspar de Portolà]] arrived on November 2, 1769, the first documented European visit to San Francisco Bay.[21] Seven years later, on March 28, 1776, the Spanish established the [[Presidio of San Francisco]], followed by a mission, Mission San Francisco de Asís ([[Mission Dolores]]), established by the Spanish explorer [[Juan Bautista de Anza]].
+
+Upon independence from Spain in 1821, the area became part of Mexico. Under Mexican rule, the mission system gradually ended, and its lands became privatized. In 1835, Englishman William Richardson erected the first independent homestead, near a boat anchorage around what is today [[Portsmouth Square]]. Together with [[Alcalde Francisco de Haro]], he laid out a street plan for the expanded settlement, and the town, named [[Yerba Buena]], began to attract American settlers. [[Commodore John D. Sloat]] claimed California for the United States on July 7, 1846, during the [[Mexican-American War]], and [[Captain John B. Montgomery]] arrived to claim Yerba Buena two days later. Yerba Buena was renamed San Francisco on January 30 of the next year, and Mexico officially ceded the territory to the United States at the end of the war. Despite its attractive location as a port and naval base, San Francisco was still a small settlement with inhospitable geography.
+			
+		</textarea>
+	</div>
 
 	</body>
 </html>

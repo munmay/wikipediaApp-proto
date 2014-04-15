@@ -154,6 +154,10 @@ p{
   top: 9;
 }
 
+.left-drawer-wrapper{
+  overflow-y: scroll;
+  position: fixed;
+}
 
 #left-drawer{
   font-family: helvetica neue;
@@ -165,6 +169,7 @@ p{
   padding: 1.5em;
   color: #fff;
   position: fixed;
+  overflow: scroll;
   left: 0;
   top: 0;
   display: none;
