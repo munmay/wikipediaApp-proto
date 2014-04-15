@@ -1,23 +1,9 @@
 $(document).ready( function() {
 
-//	if (window.navigator.standalone) {
-//	  $("meta[name='apple-mobile-web-app-status-bar-style']").remove();
-//	}
-
-
-//Hide chrome
-
-//	window.addEventListener("load",function() {
-//	setTimeout(function(){
-//		window.scrollTo(0, 1);
-//	}, 0);});
-
 // Animate on landing
 
 	$('#article').animate({top: '270'})
     $("#bgphoto").animate({zoom:'90%'});
-
-
 
 
 
@@ -77,7 +63,6 @@ $(document).ready( function() {
 //Left-drawer
 
 	$('#logo').click(function(){
-		$('#left-drawer').show();
 		$('#topbar').hide();
 		$('div#article, div#bgphoto').animate({top:'+=10%' , left: '80%', zoom: '50%',overflow:'hidden'});
 		$('.wikicon-li, .wikicon-ul').fadeIn('slow');
@@ -90,7 +75,6 @@ $(document).ready( function() {
 		$('#topbar').show('slow');
 		$('div#article, div#bgphoto').animate({top:'-=10%' , left: '0%', zoom: '100%',overflow:'auto'});
 		$('.wikicon-li, .wikicon-ul').fadeOut('slow');
-		$('#left-drawer').hide(2000);
 	});
 
 

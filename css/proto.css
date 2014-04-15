@@ -172,7 +172,6 @@ p{
   overflow: scroll;
   left: 0;
   top: 0;
-  display: none;
 }
 
 
@@ -180,8 +179,8 @@ p{
   font-size: 3.2em;
   color: #00AF89;
   float: right;
-  margin-right: 0.2em;
-  top: -50;
+  margin-right: 0.1em;
+  top: -47;
   display: none;
   position: relative;
 }
