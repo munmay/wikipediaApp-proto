@@ -20,16 +20,17 @@ $(document).ready( function() {
 	$(document).bubbaTonks(function(dist){
 				
 		console.log('down '+ dist+' scrollDist:'+scrollDist);
-		$('#edit').animate({ top :'-30px'}, 100, function() {$('#searchboxicon').animate({top: '7px'}, 100);});
+		$('#edit').animate({ top :'-30px'}, 100, function() {$('#searchboxicon').animate({top: '-6px'}, 100);});
 	},
 	
 	function(dist){
 		
 		console.log('up '+ dist+' scrollDist:'+scrollDist);
-		$('#searchboxicon').animate({ top :'-30px'}, 100, function() {$('#edit').animate({top: '7px'}, 100);});
+		$('#searchboxicon').animate({ top :'-60px'}, 100, function() {$('#edit').animate({top: '7px'}, 100);});
 	},
 	true,
 	'#article');
+
 
 
 
@@ -50,12 +51,33 @@ $(document).ready( function() {
     $('#back').click(function(){
 		$("#logo, #searchboxicon, #searchbox, #edit").show();
 		$("#back, #context, #progressive-icon, #sfMock, textarea").hide();
-
 		$('#article,#bgphoto').show();
 		$('.mock').hide();
 
 })
 
+
+
+
+// This allows users to search
+	$('#searchboxicon').click(function(){
+		$('#logo, #edit, #searchbox').hide();
+		$('#exit, #overlay, hr.line').show();
+		$('#topbar').css({'border-style': 'solid', 'border-width': '0px 0px 1px 0px', 'border-color': '#CCC'});
+		$('div#searchbox').show()
+		$('textarea#searchbox-hidden').show();
+		$('textarea#searchbox-hidden').html("Search Wikipedia")
+		$('textarea').css({'background-color': 'white', 'line-height': '13px'});
+
+	})
+	
+	$('#exit').click(function(){
+		$('#logo, #edit, #searchbox').show();
+		$('#exit, #overlay, hr.line').hide();
+		$('#topbar').css({'border-style': '', 'border-width': '', 'border-color': ''});
+		$('textarea#searchbox-hidden').hide();
+
+	})
 
 
 
@@ -65,7 +87,7 @@ $(document).ready( function() {
 		$('#left-drawer').show();
 		$('#topbar').hide();
 		$('div#article, div#bgphoto').animate({top:'+=10%' , left: '80%', zoom: '50%',overflow:'hidden'});
-		$('.wikicon-li, .wikicon-ul').fadeIn('slow');
+		$('.WikiFont-li, .WikiFont-ul').fadeIn('slow');
 	});
 
 
@@ -74,7 +96,7 @@ $(document).ready( function() {
 	$('#article, #bgphoto').click(function(){
 		$('#topbar').show('slow');
 		$('div#article, div#bgphoto').animate({top:'-=10%' , left: '0%', zoom: '100%',overflow:'auto'});
-		$('.wikicon-li, .wikicon-ul').fadeOut('slow');
+		$('.WikiFont-li, .WikiFont-ul').fadeOut('slow');
 		$('#left-drawer').hide(2000);
 	});
 
