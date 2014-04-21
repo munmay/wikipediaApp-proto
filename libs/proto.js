@@ -33,7 +33,6 @@ $(document).ready( function() {
 
 
 
-
 // This allows users to start editing
 
 	$('#edit').click(function(){
