@@ -51,7 +51,6 @@ $(document).ready( function() {
     $('#back').click(function(){
 		$("#logo, #searchboxicon, #searchbox, #edit").show();
 		$("#back, #context, #progressive-icon, #sfMock, textarea").hide();
-
 		$('#article,#bgphoto').show();
 		$('.mock').hide();
 
